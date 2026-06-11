@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Republic of Diamonds | Timeless Brilliance. Modern Luxury.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- DIAMOND SVG SYMBOL -->
+<svg style="display:none">
+  <symbol id="diamond-logo" viewBox="0 0 100 80">
+    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+      <polygon points="50,5 85,30 50,75 15,30"/>
+      <line x1="15" y1="30" x2="85" y2="30"/>
+      <line x1="35" y1="30" x2="50" y2="5"/>
+      <line x1="65" y1="30" x2="50" y2="5"/>
+      <line x1="35" y1="30" x2="50" y2="75"/>
+      <line x1="65" y1="30" x2="50" y2="75"/>
+      <line x1="50" y1="30" x2="50" y2="75"/>
+      <line x1="50" y1="5" x2="50" y2="30"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <div class="diamond-icon" style="color:var(--gold)">
+      <svg viewBox="0 0 100 80" width="32" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+        <polygon points="50,5 85,30 50,75 15,30"/>
+        <line x1="15" y1="30" x2="85" y2="30"/>
+        <line x1="35" y1="30" x2="50" y2="5"/>
+        <line x1="65" y1="30" x2="50" y2="5"/>
+        <line x1="35" y1="30" x2="50" y2="75"/>
+        <line x1="65" y1="30" x2="50" y2="75"/>
+        <line x1="50" y1="30" x2="50" y2="75"/>
+        <line x1="50" y1="5" x2="50" y2="30"/>
+      </svg>
+    </div>
+    <span class="nav-brand">Republic of Diamonds</span>
+  </a>
+  <div class="nav-links">
+    <a href="#specialities">Collections</a>
+    <a href="#why-us">Why Us</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-nav" onclick="scrollToScheduler()">Book Consult</button>
+  </div>
+  <div class="hamburger" onclick="openMobileMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobileMenu()"><i class="fas fa-times"></i></button>
+  <a href="#specialities" onclick="closeMobileMenu()">Collections</a>
+  <a href="#why-us"       onclick="closeMobileMenu()">Why Us</a>
+  <a href="#gallery"      onclick="closeMobileMenu()">Gallery</a>
+  <a href="#reviews"      onclick="closeMobileMenu()">Reviews</a>
+  <a href="#scheduler"    onclick="closeMobileMenu()">Book Consult</a>
+  <a href="#faq"          onclick="closeMobileMenu()">FAQ</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <!-- Background video blended seamlessly -->
+  <div class="hero-video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="4784116_Couple_Engagement_1920x1080.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-video-overlay"></div>
+
+  <div class="hero-grid">
+    <div class="hero-content fade-in">
+      <div class="hero-label">Bespoke Fine Jewellery</div>
+      <h1 class="hero-title">Diamonds,<br>designed <em>around you.</em></h1>
+      <p class="hero-tagline">Timeless Brilliance. Modern Luxury.</p>
+      <p class="hero-desc">Republic of Diamonds creates one of a kind engagement rings and wedding bands, ethically sourced, GIA and IGI certified, handcrafted by master goldsmiths in South Africa.</p>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="scrollToScheduler()">
+          <i class="fas fa-calendar-check"></i> Book Private Consultation
+        </button>
+        <button class="btn-ghost" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-gem"></i> View Gallery
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SPECIALITIES -->
+<section id="specialities" style="padding:7rem 3rem;background:var(--dark)">
+  <div class="section-header fade-in">
+    <span class="section-label">Our Specialities</span>
+    <h2 class="section-title">Four Pillars of Excellence</h2>
+    <p class="section-desc">Engagement rings, wedding bands, diamond necklaces and earrings, each piece made to last a lifetime.</p>
+  </div>
+  <div class="specialities-grid">
+    <div class="spec-card fade-in" onclick="scrollToScheduler()">
+      <div class="spec-icon"><i class="fas fa-ring"></i></div>
+      <div class="spec-title">Custom Engagement Rings</div>
+      <p class="spec-desc">From the first sketch to the final polish, a private design journey ending in a ring that's unmistakably yours.</p>
+      <ul class="spec-features">
+        <li>Private consultation included</li>
+        <li>CAD preview and stone selection</li>
+        <li>Hand crafted in SA</li>
+      </ul>
+    </div>
+    <div class="spec-card fade-in" onclick="scrollToScheduler()">
+      <div class="spec-icon"><i class="fas fa-infinity"></i></div>
+      <div class="spec-title">Wedding Bands</div>
+      <p class="spec-desc">His and hers, matched sets, and custom engraving in platinum, white gold, yellow gold or rose gold.</p>
+      <ul class="spec-features">
+        <li>Matched or contrasting designs</li>
+        <li>Comfort-fit profiles</li>
+        <li>Custom engraving included</li>
+      </ul>
+    </div>
+    <div class="spec-card fade-in" onclick="scrollToScheduler()">
+      <div class="spec-icon"><i class="fas fa-gem"></i></div>
+      <div class="spec-title">Diamond Necklaces</div>
+      <p class="spec-desc">Solitaire pendants, tennis necklaces and bespoke heirloom pieces, designed to be worn every day or saved for the moment.</p>
+      <ul class="spec-features">
+        <li>Solitaire and halo pendants</li>
+        <li>Tennis necklaces</li>
+        <li>Bespoke heirloom pieces</li>
+      </ul>
+    </div>
+    <div class="spec-card fade-in" onclick="scrollToScheduler()">
+      <div class="spec-icon"><i class="fas fa-star"></i></div>
+      <div class="spec-title">Earrings</div>
+      <p class="spec-desc">Studs, hoops and statement drops, crafted in precious metals and set with brilliant, ethically sourced diamonds.</p>
+      <ul class="spec-features">
+        <li>Diamond studs and halos</li>
+        <li>Hoops and huggies</li>
+        <li>Bespoke statement drops</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why-us">
+  <div class="section-header fade-in">
+    <span class="section-label">Why Choose Us</span>
+    <h2 class="section-title">Built on Trust. Worn for a Lifetime.</h2>
+    <span class="gold-line center"></span>
+  </div>
+  <div class="why-grid">
+    <div class="why-card fade-in">
+      <div class="why-icon"><i class="fas fa-certificate"></i></div>
+      <div class="why-title">Ethically Sourced</div>
+      <p class="why-desc">Every diamond is GIA and IGI certified and conflict-free, with full traceability from mine to hand.</p>
+    </div>
+    <div class="why-card fade-in">
+      <div class="why-icon"><i class="fas fa-tools"></i></div>
+      <div class="why-title">Master Craftsmanship</div>
+      <p class="why-desc">Over 20 years of bench experience. Every piece is hand-finished by master goldsmiths in South Africa.</p>
+    </div>
+    <div class="why-card fade-in">
+      <div class="why-icon"><i class="fas fa-hand-holding-usd"></i></div>
+      <div class="why-title">Direct Pricing</div>
+      <p class="why-desc">Direct from our atelier, so no retail middleman markup, ever. True value for extraordinary quality.</p>
+    </div>
+    <div class="why-card fade-in">
+      <div class="why-icon"><i class="fas fa-heart"></i></div>
+      <div class="why-title">You Feel Empowered</div>
+      <p class="why-desc">We ensure you feel fully informed and empowered whilst we design your dream piece together.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" style="padding:7rem 3rem;background:var(--black)">
+  <div class="section-header fade-in">
+    <span class="section-label">How It Works</span>
+    <h2 class="section-title">Your Design Journey</h2>
+    <span class="gold-line center"></span>
+    <p class="section-desc">A seamless, personal process from first conversation to finished masterpiece.</p>
+  </div>
+  <div class="process-steps">
+    <div class="process-step fade-in">
+      <div class="step-num">01</div>
+      <div class="step-title">Book a Consultation</div>
+      <p class="step-desc">Schedule a private consultation in person or online. Share your vision, style, and budget.</p>
+    </div>
+    <div class="process-step fade-in">
+      <div class="step-num">02</div>
+      <div class="step-title">Stone Selection</div>
+      <p class="step-desc">We curate certified diamonds matching your specs. Compare side-by-side with full GIA/IGI reports.</p>
+    </div>
+    <div class="process-step fade-in">
+      <div class="step-num">03</div>
+      <div class="step-title">Design and CAD Preview</div>
+      <p class="step-desc">Your ring is designed, refined through CAD previews, and approved by you before a single metal is cut.</p>
+    </div>
+    <div class="process-step fade-in">
+      <div class="step-num">04</div>
+      <div class="step-title">Handcrafted and Delivered</div>
+      <p class="step-desc">Master goldsmiths bring your piece to life. Delivered insured with full certification and documentation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-header fade-in">
+    <span class="section-label">Recent Work</span>
+    <h2 class="section-title">From Our Atelier</h2>
+    <span class="gold-line center"></span>
+    <p class="section-desc">A glimpse of recent commissions, each piece designed with its wearer in mind.</p>
+  </div>
+  <div class="gallery-grid" id="galleryGrid"></div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" style="padding:7rem 3rem;background:var(--black)">
+  <div class="section-header fade-in">
+    <span class="section-label">Client Stories</span>
+    <h2 class="section-title">What Our Clients Say</h2>
+    <span class="gold-line center"></span>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card fade-in">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Josh guided us through every step. The ring is beyond what we imagined. My fiancée cried when she saw it. Truly one of a kind."</p>
+      <div class="review-author">
+        <div class="review-avatar">DM</div>
+        <div>
+          <div class="review-name">Daniel Mokoena</div>
+          <div class="review-location">Johannesburg, SA</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card fade-in">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"The consultation was so relaxed and informative. We never felt pressured. The matching bands are perfect and the engraving is exquisite."</p>
+      <div class="review-author">
+        <div class="review-avatar">SV</div>
+        <div>
+          <div class="review-name">Sarah van der Berg</div>
+          <div class="review-location">Cape Town, SA</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card fade-in">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I was nervous about the process but Republic of Diamonds made it effortless. The diamond quality is incredible and the price was very fair."</p>
+      <div class="review-author">
+        <div class="review-avatar">TP</div>
+        <div>
+          <div class="review-name">Thabo Pienaar</div>
+          <div class="review-location">Pretoria, SA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULER / BOOK CONSULTATION -->
+<section id="scheduler">
+  <div class="scheduler-wrap">
+    <div class="scheduler-info fade-in">
+      <span class="section-label">Book a Consultation</span>
+      <h2>Book Your Private Consultation</h2>
+      <span class="gold-line" style="margin-bottom:1.8rem;margin-top:1rem"></span>
+      <p>Tell us about your vision and we'll be in touch within one business day to schedule a private consultation. Available Mon to Fri, 09:00 to 18:00 SAST.</p>
+      <ul class="scheduler-perks">
+        <li><i class="fas fa-check"></i> No obligation, completely free</li>
+        <li><i class="fas fa-lock"></i> Private and confidential</li>
+        <li><i class="fas fa-video"></i> In-person or virtual available</li>
+        <li><i class="fas fa-clock"></i> Response within one business day</li>
+        <li><i class="fas fa-gem"></i> Diamond viewing included</li>
+        <li><i class="fas fa-pencil-ruler"></i> CAD design preview</li>
+      </ul>
+    </div>
+
+    <div class="scheduler-form fade-in">
+      <div class="form-title">Book Your Appointment</div>
+      <p class="form-sub">Clicking "Book Now" will open our calendar to choose your date and time.</p>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="f-name" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" id="f-phone" placeholder="+27 XX XXX XXXX">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="f-email" placeholder="hello@example.com">
+        </div>
+        <div class="form-group">
+          <label>Project Type</label>
+          <select id="f-type">
+            <option>Custom Engagement Ring</option>
+            <option>Wedding Band</option>
+            <option>Diamond Necklace</option>
+            <option>Earrings</option>
+            <option>Tennis Bracelet</option>
+            <option>Loose Diamond</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Tell Us About Your Vision</label>
+          <textarea id="f-vision" placeholder="Style, stones, budget, timeline, anything you have in mind..."></textarea>
+        </div>
+      </div>
+      <button class="btn-submit" onclick="submitBooking()">
+        <i class="fas fa-calendar-check"></i> Book Now
+      </button>
+      <button class="whatsapp-btn" onclick="openWhatsApp()">
+        <i class="fab fa-whatsapp" style="font-size:1.1rem"></i> Chat on WhatsApp
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-header fade-in">
+    <span class="section-label">Questions</span>
+    <h2 class="section-title">Frequently Asked</h2>
+    <span class="gold-line center"></span>
+  </div>
+  <div class="faq-wrap" id="faqWrap"></div>
+</section>
+
+<!-- CONTACT BANNER -->
+<section id="contact-banner">
+  <div class="contact-inner fade-in">
+    <span class="section-label">Start Your Journey</span>
+    <h2>Ready to Create Something <em style="font-style:italic;color:var(--gold)">Timeless?</em></h2>
+    <p>Reach out and let's bring your dream piece to life. Josh and the team are always happy to help.</p>
+    <div class="contact-ctas">
+      <button class="btn-primary" onclick="scrollToScheduler()">
+        <i class="fas fa-calendar-check"></i> Book a Consultation
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo-wrap">
+        <svg viewBox="0 0 100 80" width="28" height="22" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linejoin="round">
+          <polygon points="50,5 85,30 50,75 15,30"/>
+          <line x1="15" y1="30" x2="85" y2="30"/>
+          <line x1="35" y1="30" x2="50" y2="5"/>
+          <line x1="65" y1="30" x2="50" y2="5"/>
+          <line x1="35" y1="30" x2="50" y2="75"/>
+          <line x1="65" y1="30" x2="50" y2="75"/>
+          <line x1="50" y1="5" x2="50" y2="30"/>
+        </svg>
+        <div class="footer-brand-name">Republic of Diamonds</div>
+      </div>
+      <div class="footer-tagline">Timeless Brilliance. Modern Luxury.</div>
+      <p class="footer-about">Creating one-of-a-kind bespoke jewellery crafted in South Africa. Every piece is a collaboration between you and our master goldsmiths.</p>
+      <div class="footer-socials">
+        <a class="social-link" href="#" title="Instagram" onclick="return false;"><i class="fab fa-instagram"></i></a>
+        <a class="social-link" href="#" title="Facebook"  onclick="return false;"><i class="fab fa-facebook-f"></i></a>
+        <a class="social-link" href="#" title="Pinterest" onclick="return false;"><i class="fab fa-pinterest-p"></i></a>
+        <a class="social-link" href="https://wa.me/27722494793" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Collections</h4>
+      <ul>
+        <li><a href="#specialities">Engagement Rings</a></li>
+        <li><a href="#specialities">Wedding Bands</a></li>
+        <li><a href="#specialities">Diamond Necklaces</a></li>
+        <li><a href="#specialities">Earrings</a></li>
+        <li><a href="#gallery">Tennis Bracelets</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#scheduler">Book Consultation</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item">
+        <i class="fas fa-phone"></i>
+        <span>+27 72 249 4793</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>hello@republicofdiamonds.com</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Crafted in South Africa</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fas fa-clock"></i>
+        <span>Mon to Fri, 09:00 to 18:00 SAST</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Republic of Diamonds. All rights reserved.</div>
+    <div class="footer-cert">
+      <div class="cert-badge"><i class="fas fa-certificate" style="color:var(--gold);margin-right:4px"></i>GIA Certified</div>
+      <div class="cert-badge"><i class="fas fa-certificate" style="color:var(--gold);margin-right:4px"></i>IGI Certified</div>
+    </div>
+    <div class="footer-legal">
+      <a href="#" onclick="return false;">Privacy Policy</a>
+      <a href="#" onclick="return false;">Terms of Service</a>
+      <a href="#" onclick="return false;">Returns Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- PRODUCT MODAL -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toastMsg">Done!</span></div>
+
+<script src="script.js"></script>
+</body>
+</html>
