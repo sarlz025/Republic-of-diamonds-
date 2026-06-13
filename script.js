@@ -70,9 +70,9 @@ function showGalleryModal(i) {
          style="width:100%;max-height:420px;object-fit:contain;background:#0A0A0A;margin-bottom:1.5rem">
     <div style="font-family:var(--serif);font-size:1.6rem;color:#F5F0E8;margin-bottom:0.4rem">${p.label}</div>
     <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:1.8rem">${p.desc}</p>
-    <div style="display:flex;gap:1rem">
-      <button class="btn-primary" onclick="scrollToScheduler();closeModal()"><i class="fas fa-calendar"></i> Enquire About This</button>
-      <button class="btn-ghost" onclick="closeModal()"><i class="fas fa-times"></i> Close</button>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <button class="btn-primary" style="flex:1;min-width:140px;justify-content:center" onclick="scrollToScheduler();closeModal()"><i class="fas fa-calendar"></i> Enquire About This</button>
+      <button class="btn-ghost" style="flex:1;min-width:100px;justify-content:center" onclick="closeModal()"><i class="fas fa-times"></i> Close</button>
     </div>
   `;
   document.getElementById('productModal').classList.add('active');
@@ -94,27 +94,17 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 3200);
 }
 
-// ===== BOOKING =====
-function submitBooking() {
-  const name  = document.getElementById('f-name')?.value.trim();
-  const phone = document.getElementById('f-phone')?.value.trim();
-  const email = document.getElementById('f-email')?.value.trim();
-
-  if (!name || !phone) { showToast('Please fill in your name and phone number'); return; }
-
-  // Build Google Calendar appointment URL
-  const calendarUrl = 'https://calendar.app.google/YyGg8SXyDygZJgX38';
-
-  showToast(`Redirecting you to book your consultation, ${name.split(' ')[0]}!`);
-  setTimeout(() => window.open(calendarUrl, '_blank'), 800);
-
-  // Clear form
-  ['f-name','f-phone','f-email','f-type','f-vision'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.value = el.tagName === 'SELECT' ? el.options[0].value : '';
+// ===== BOOKING TABS =====
+function switchBookingTab(tab) {
+  const tabs = ['calendar', 'form'];
+  tabs.forEach(t => {
+    document.getElementById(`tab-${t}`)?.classList.toggle('active', t === tab);
+    const panel = document.getElementById(`panel-${t}`);
+    if (panel) panel.style.display = t === tab ? 'block' : 'none';
   });
 }
 
+// ===== BOOKING FORM =====
 function openWhatsApp() {
   window.open('https://wa.me/27722494793?text=Hello%20Republic%20of%20Diamonds%2C%20I%27d%20love%20to%20book%20a%20consultation.', '_blank');
 }

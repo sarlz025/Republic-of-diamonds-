@@ -8,6 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 </head>
 <body>
 
@@ -287,44 +290,80 @@
     </div>
 
     <div class="scheduler-form fade-in">
-      <div class="form-title">Book Your Appointment</div>
-      <p class="form-sub">Clicking "Book Now" will open our calendar to choose your date and time.</p>
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" id="f-name" placeholder="Your full name">
-        </div>
-        <div class="form-group">
-          <label>Phone</label>
-          <input type="tel" id="f-phone" placeholder="+27 XX XXX XXXX">
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" id="f-email" placeholder="hello@example.com">
-        </div>
-        <div class="form-group">
-          <label>Project Type</label>
-          <select id="f-type">
-            <option>Custom Engagement Ring</option>
-            <option>Wedding Band</option>
-            <option>Diamond Necklace</option>
-            <option>Earrings</option>
-            <option>Tennis Bracelet</option>
-            <option>Loose Diamond</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group full">
-          <label>Tell Us About Your Vision</label>
-          <textarea id="f-vision" placeholder="Style, stones, budget, timeline, anything you have in mind..."></textarea>
+
+      <!-- TAB SWITCHER -->
+      <div class="booking-tabs" id="bookingTabs">
+        <button class="booking-tab active" id="tab-calendar" onclick="switchBookingTab('calendar')">
+          <i class="fas fa-calendar-alt"></i> Book Online
+        </button>
+        <button class="booking-tab" id="tab-form" onclick="switchBookingTab('form')">
+          <i class="fas fa-pen"></i> Send Enquiry
+        </button>
+      </div>
+
+      <!-- ===== PANEL 1: GOOGLE CALENDAR ===== -->
+      <div class="booking-panel" id="panel-calendar">
+        <div class="cal-blocked">
+          <div class="cal-blocked-icon"><i class="fas fa-calendar-alt"></i></div>
+          <p class="cal-blocked-title">Open in Google Calendar</p>
+          <p class="cal-blocked-sub">For the best booking experience, click below to choose your date and time directly in Google Calendar.</p>
+          <a class="btn-submit" href="https://calendar.app.google/YyGg8SXyDygZJgX38" target="_blank" rel="noopener">
+            <i class="fas fa-calendar-check"></i> Book My Consultation
+          </a>
+          <button class="booking-switch-link" onclick="switchBookingTab('form')">
+            Prefer to send an enquiry instead? <span>Switch to form</span>
+          </button>
         </div>
       </div>
-      <button class="btn-submit" onclick="submitBooking()">
-        <i class="fas fa-calendar-check"></i> Book Now
-      </button>
-      <button class="whatsapp-btn" onclick="openWhatsApp()">
-        <i class="fab fa-whatsapp" style="font-size:1.1rem"></i> Chat on WhatsApp
-      </button>
+
+      <!-- ===== PANEL 2: ENQUIRY FORM ===== -->
+      <div class="booking-panel" id="panel-form" style="display:none">
+        <div class="form-title">Send an Enquiry</div>
+        <p class="form-sub">Fill in your details and we'll get back to you within one business day.</p>
+        <form action="https://formsubmit.co/hello@republicofdiamonds.com" method="POST" class="form-grid" style="display:contents">
+          <!-- FormSubmit config -->
+          <input type="hidden" name="_subject" value="New Enquiry – Republic of Diamonds">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="">
+          <input type="hidden" name="_template" value="table">
+
+          <div class="form-group">
+            <label for="f-name">Full Name</label>
+            <input type="text" id="f-name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="f-phone">Phone</label>
+            <input type="tel" id="f-phone" name="phone" placeholder="+27 XX XXX XXXX" required>
+          </div>
+          <div class="form-group">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" placeholder="hello@example.com">
+          </div>
+          <div class="form-group">
+            <label for="f-type">Project Type</label>
+            <select id="f-type" name="project_type">
+              <option>Custom Engagement Ring</option>
+              <option>Wedding Band</option>
+              <option>Diamond Necklace</option>
+              <option>Earrings</option>
+              <option>Tennis Bracelet</option>
+              <option>Loose Diamond</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="f-vision">Tell Us About Your Vision</label>
+            <textarea id="f-vision" name="vision" placeholder="Style, stones, budget, timeline, anything you have in mind..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <i class="fas fa-paper-plane"></i> Send Enquiry
+          </button>
+        </form>
+        <button class="whatsapp-btn" onclick="openWhatsApp()">
+          <i class="fab fa-whatsapp" style="font-size:1.1rem"></i> Chat on WhatsApp
+        </button>
+      </div>
+
     </div>
   </div>
 </section>
